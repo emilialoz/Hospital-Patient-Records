@@ -40,7 +40,48 @@ The purpose of this analysis is to build a KPI dashboard that enables hospital e
 | Procedure | [procedures.csv](https://github.com/emilialoz/Hospital-Patient-Records/blob/main/data/procedures.csv) |
 | _hospitallogs | stores logs related to scheduled jobs and other database operations. It supports monitoring, error handling, and auditing of system activities |
 
-- 🐍 **Python scripting** to load data to SQL tables
+🔑 **Primary keys and foreign keys** <br>
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Primary key</th>
+      <th>Foreign key</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patients</td>
+      <td><code>ID</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Encounters</td>
+      <td><code>EncounterID</code></td>
+      <td>
+        <code>PatientID</code> → Patients(ID)<br>
+        <code>PayerID</code> → Payers(ID)
+      </td>
+    </tr>
+    <tr>
+      <td>Procedures</td>
+      <td>—</td>
+      <td>
+        <code>PATIENT</code> → Patients(ID)<br>
+        <code>ENCOUNTER</code> → Encounters(EncounterID)
+      </td>
+    </tr>
+    <tr>
+      <td>Payers</td>
+      <td><code>ID</code></td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+- 🐍 <b>Python scripting</b> to load data to SQL tables <br>
+<br>
 <table>
   <tr>
     <th colspan="3"><b>Justification for Python Scripting Selection</b></th>
@@ -64,5 +105,8 @@ The purpose of this analysis is to build a KPI dashboard that enables hospital e
     <td colspan= "2" style="text-align:left; background-color: #D6EEEE">Solution ensures reliable, automated handling of large datasets, minimizes manual intervention, and provides robust error control compared to the alternatives.</td>
   </tr>
 </table>
+
+
+
 
 
