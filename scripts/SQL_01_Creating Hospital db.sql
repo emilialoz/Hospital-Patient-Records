@@ -1,6 +1,7 @@
 --CREATE DATABASE HospitalM;
 
 -- Create Payers table
+USE HospitalM
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Payers' AND xtype='U')
 BEGIN 
 CREATE TABLE Payers (
@@ -19,6 +20,7 @@ PRINT 'Table [Payers] already exists'
 END;
 
 -- Create Patients table
+USE HospitalM
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Patients' AND xtype='U')
 BEGIN 
 CREATE TABLE Patients (
@@ -50,6 +52,7 @@ PRINT 'Table [Patients] already exists'
 END;
 
 -- Create Procedures table
+USE HospitalM
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Procedures' AND xtype='U')
 BEGIN 
 CREATE TABLE Procedures (
@@ -71,6 +74,7 @@ END
 
 
 -- Create Encounters table
+USE HospitalM
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Encounters' AND xtype='U')
 BEGIN 
 CREATE TABLE Encounters (
@@ -94,6 +98,7 @@ PRINT 'Table [Encounters] already exists'
 END
 
 -- Create _hospitallogs table
+USE HospitalM
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='_hospitallogs' AND xtype='U')
 BEGIN 
 CREATE TABLE _hospitallogs (
