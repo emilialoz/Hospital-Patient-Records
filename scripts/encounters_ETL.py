@@ -51,4 +51,4 @@ with engine.connect() as connection:
     connection.commit()
 
 
-df.to_sql(name = TABLE_NAME, con = engine, if_exists = 'replace',  index=False)
+df.to_sql(name = TABLE_NAME, con = engine, if_exists = 'append',  index=False)

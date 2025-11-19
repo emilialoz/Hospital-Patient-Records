@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 from sqlalchemy.dialects.mssql.information_schema import columns
 from sqlalchemy.testing.suite import PrecisionIntervalTest
+import uuid
 
 SERVER_NAME = 'Emi_Bamboo'
 DB_NAME = 'HospitalM'
@@ -24,7 +25,9 @@ data_types = {
 
 }
 
+
 df = pd.read_csv(FILE_NAME, sep = ',', dtype=data_types)
+df.rename(columns={"Id": "ID"}, inplace=True)
 
 sql_connection_string = (f'mssql+pyodbc://@{SERVER_NAME}/{DB_NAME}?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server')
 engine = create_engine(sql_connection_string)
@@ -34,5 +37,5 @@ with engine.connect() as connection:
     connection.commit()
 
 
-df.to_sql(name = TABLE_NAME, con = engine, if_exists = 'replace',  index=False)
+df.to_sql(name = TABLE_NAME, con = engine, if_exists = 'append',  index=False)
 
