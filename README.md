@@ -27,8 +27,9 @@ The purpose of this analysis is to build a KPI dashboard that enables hospital e
 ## Backend
 
  1. SQL:
-	 -[ database creation query](https://github.com/emilialoz/Hospital-Patient-Records/blob/main/scripts/SQL_01_Creating%20Hospital%20db.sql),
-		 - 
+- [ database creation query](https://github.com/emilialoz/Hospital-Patient-Records/blob/main/scripts/SQL_01_Creating%20Hospital%20db.sql)
+
+
 | Table | Description/csv file|
 | ----------- | ----------- |
 | Encounters | [encounters.csv](https://github.com/emilialoz/Hospital-Patient-Records/blob/main/data/encounters.csv) |
