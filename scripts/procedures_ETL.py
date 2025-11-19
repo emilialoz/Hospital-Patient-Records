@@ -16,7 +16,7 @@ FILE_NAME = r'C:\EMI_\GitHub_repos\Hospital-Patient-Records\data\procedures.csv'
 data_types = {
                 'START': 'object',
                 'STOP': 'object',
-                'PATIENT': 'object', 
+                'PATIENT': 'object',
                 'ENCOUNTER': 'object',
                 'CODE': 'int64',
                 'DESCRIPTION': 'object',
